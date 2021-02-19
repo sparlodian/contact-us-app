@@ -1,0 +1,16 @@
+Development setup:
+-Node.js 14.15.5
+-JDK OpenJDK 64bit 15.0.2
+-PostgreSQL 13.2
+-Git for Windows 2.30.1
+-VS Code 1.53.2
+-Eclipse IDE 2020-12 64bit
+
+19.2.2021 Kick-off
+-Installed development tools
+-Created Github repository at https://github.com/sparlodian/contact-us-app
+-Created project backlog board at Github projects, filled known backlog items for MVP
+-Cloned Githup repository to local project folder
+-Generated React app starter code with commandline command: 'npx create-react-app contact-us-app'
+-Generated Spring app started code with start.spring.io with required dependencies: "Spring Data JPA, PostgreSQL Driver, Spring Web, Spring Security". 
+    -Spring version 2.4.3. Java version 15. Packaging JAR.
