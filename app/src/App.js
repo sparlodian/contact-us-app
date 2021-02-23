@@ -1,15 +1,17 @@
-import logo from './logo.svg';
-import ListItems from './components/list-items';
 import './App.css';
+import AppRouter from './components/router';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <ListItems/>
-      </header>
+    <div className="container">
+          <AppRouter/>
     </div>
   );
+}
+
+const style = {
+  color: 'green',
+  margin: '8px'
 }
 
 export default App;

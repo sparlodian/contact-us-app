@@ -14,3 +14,13 @@ Development setup:
 -Generated React app starter code with commandline command: 'npx create-react-app contact-us-app'
 -Generated Spring app started code with start.spring.io with required dependencies: "Spring Data JPA, PostgreSQL Driver, Spring Web, Spring Security". 
     -Spring version 2.4.3. Java version 15. Packaging JAR.
+-Uploaded project starter code to Github
+
+22.2.2021
+-Developed first version of ListItems, AddItem, EditItem Components in React.
+-Installed routing to project using command line comman 'npm add react-router-dom' to catch user URI in browsing.
+-Added routing to main App component
+-Added API support for React project with commandline command 'npm install axios' https://github.com/axios/axios
+    -Why axios and not fetch: https://www.geeksforgeeks.org/difference-between-fetch-and-axios-js-for-making-http-requests/-
+-Added itemservice.js react class for APÏ interaction through axios
+-Developed backend model, controller, view and service classes and error handling.
