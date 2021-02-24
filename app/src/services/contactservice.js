@@ -20,7 +20,7 @@ class ContactService {
         return axios.post(ITEMSERVICE_API_BASE_URL, contact);
     }
 
-    editUser(contact) {
+    editContact(contact) {
         return axios.put(ITEMSERVICE_API_BASE_URL + '/' + contact.id, contact);
     }
 

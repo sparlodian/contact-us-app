@@ -81,12 +81,12 @@ class AddContactComponent extends Component{
 
                 <div className="form-group">
                     <label>Message:</label>
-                    <textarea type="text" placeholder="My Message" name="MsgClient" className="form-control" value={this.state.MsgClient} onChange={this.onChange}/>
+                    <textarea type="text" placeholder="My Message" name="msgclient" className="form-control" value={this.state.MsgClient} onChange={this.onChange}/>
                 </div>
 
                 <button className="btn btn-success" onClick={this.saveContact}>Save</button>
             </form>
-    </div>
+        </div>
         );
     }
 }

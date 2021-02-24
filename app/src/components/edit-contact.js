@@ -24,7 +24,7 @@ class EditContactComponent extends Component {
     }
 
     loadContact() {
-        ContactService.fetchContactById(window.localStorage.getContact("ContactId"))
+        ContactService.fetchContactById(window.localStorage.getItem("contactId"))
             .then((res) => {
                 let contact = res.data.result;
                 this.setState({

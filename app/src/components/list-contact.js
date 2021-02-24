@@ -26,22 +26,22 @@ class ListContactsComponent extends Component {
             });
     }
 
-    deleteContact(contactId) {
-        ContactService.deleteContact(contactId)
+    deleteContact(id) {
+        ContactService.deleteContact(id)
            .then(res => {
                this.setState({message : 'Contact deleted successfully.'});
-               this.setState({Contacts: this.state.contacts.filter(contact => contact.id !== contactId)});
+               this.setState({contacts: this.state.contacts.filter(contact => contact.id !== id)});
            })
 
     }
 
     editContact(id) {
-        // window.localStorage.setContact("ContactId", id);
+        window.localStorage.setItem("contactId", id);
         this.props.history.push('/edit-contact');
     }
 
     addContact() {
-        // window.localStorage.removeContact("ContactId");
+        window.localStorage.removeItem("ContactId");
         this.props.history.push('/add-contact');
     }
 
@@ -67,7 +67,8 @@ class ListContactsComponent extends Component {
                     <tbody>
                         {this.state.contacts.map(contact =>
                             <tr key={contact.id}>
-                                <td>{contact.firstName}</td>
+                                <td>{contact.id}</td>
+                                <td>{contact.firstname}</td>
                                 <td>{contact.familyname}</td>
                                 <td>{contact.address}</td>
                                 <td>{contact.postnumber}</td>
