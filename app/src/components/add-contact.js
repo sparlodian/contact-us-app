@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ContactService from "../services/contactservice";
+import ContactService from '../services/contactservice'
 
 class AddContactComponent extends Component{
 
@@ -42,7 +42,7 @@ class AddContactComponent extends Component{
     render() {
         return(
             <div>
-                <h2 className="text-center">Add Contact</h2>
+                <h2 className="text-center">Contact Us</h2>
                 <form>
                 <div className="form-group">
                     <label>First name:</label>

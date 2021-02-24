@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ContactService from "../services/contactservice";
+import ContactService from '../services/contactservice';
 
 class EditContactComponent extends Component {
 
@@ -46,7 +46,7 @@ class EditContactComponent extends Component {
 
     saveContact = (e) => {
         e.preventDefault();
-        let Contact = {
+        let contact = {
             id: this.state.id, 
             firstname: this.state.firstname, 
             familyname: this.state.familyname,
@@ -57,7 +57,7 @@ class EditContactComponent extends Component {
             phonenumber: this.state.phonenumber,
             msgclient: this.state.msgclient,
         };
-        ContactService.editContact(Contact)
+        ContactService.editContact(contact)
             .then(res => {
                 this.setState({message : 'Contact added successfully.'});
                 this.props.history.push('/contacts');
