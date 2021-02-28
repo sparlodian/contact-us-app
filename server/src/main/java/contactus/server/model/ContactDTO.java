@@ -1,5 +1,7 @@
 package contactus.server.model;
 
+import java.time.LocalDateTime;
+
 public class ContactDTO {
 
 	private int id;
@@ -12,6 +14,8 @@ public class ContactDTO {
     private String phonenumber;
     private String msgclient;
     private String msginternal;
+    private LocalDateTime timestamp;
+    
 	public int getId() {
 		return id;
 	}
@@ -72,5 +76,10 @@ public class ContactDTO {
 	public void setMsginternal(String msginternal) {
 		this.msginternal = msginternal;
 	}
-
+	public LocalDateTime getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(LocalDateTime timestamp) {
+		this.timestamp = timestamp;
+	}
 }

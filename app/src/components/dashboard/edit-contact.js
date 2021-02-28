@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ContactService from '../services/contactservice';
+import ContactService from '../../services/contactservice';
 
 class EditContactComponent extends Component {
 
@@ -14,6 +14,7 @@ class EditContactComponent extends Component {
             email: '',
             phonenumber: '',
             msgclient: '',
+            msginternal: '',
         }
         this.saveContact = this.saveContact.bind(this);
         this.loadContact = this.loadContact.bind(this);
@@ -37,6 +38,7 @@ class EditContactComponent extends Component {
                 email: contact.email,
                 phonenumber: contact.phonenumber,
                 msgclient: contact.msgclient,
+                msginternal: contact.msginternal,
                 })
             });
     }
@@ -56,6 +58,7 @@ class EditContactComponent extends Component {
             email: this.state.email,
             phonenumber: this.state.phonenumber,
             msgclient: this.state.msgclient,
+            msginternal: this.state.msginternal
         };
         ContactService.editContact(contact)
             .then(res => {
@@ -72,7 +75,7 @@ class EditContactComponent extends Component {
 
                     <div className="form-group">
                         <label>First name:</label>
-                        <input type="text" placeholder="firstname" name="firstname" className="form-control" readonly="true" defaultValue={this.state.firstname}/>
+                        <input type="text" placeholder="firstname" name="firstname" className="form-control" defaultValue={this.state.firstname}/>
                     </div>
 
                     <div className="form-group">
@@ -106,8 +109,13 @@ class EditContactComponent extends Component {
                     </div>
 
                     <div className="form-group">
-                        <label>Message:</label>
+                        <label>Client's message:</label>
                         <textarea type="text" placeholder="msgclient" name="msgclient" className="form-control" value={this.state.msgclient} onChange={this.onChange}/>
+                    </div>
+
+                    <div className="form-group">
+                        <label>Internal comment:</label>
+                        <textarea type="text" placeholder="msginternal" name="msginternal" className="form-control" value={this.state.msgclient} onChange={this.onChange}/>
                     </div>
 
                     <button className="btn btn-success" onClick={this.saveContact}>Save</button>

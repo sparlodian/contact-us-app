@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom'
-import ContactService from "../services/contactservice";
+import ContactService from "../../services/contactservice";
 import AddContactComponent from './add-contact';
 import EditContactComponent from './edit-contact';
 
@@ -51,8 +51,8 @@ class ListContactsComponent extends Component {
     render() {
         return (
         <div>
-            <h2 className="text-center">Contact Details</h2>
-            <button className="btn btn-danger" onClick={() => this.addContact()}> Add Contact</button>
+            <hr/>
+            <button className="btn btn-danger" id="addContactButton" onClick={() => this.addContact()}> Add Contact</button>
             <table className="table table-striped">
                 <thead>
                     <tr>
@@ -64,7 +64,8 @@ class ListContactsComponent extends Component {
                         <th>Post City</th>
                         <th>Email</th>
                         <th>Phone Number</th>
-                        <th>Msg</th>
+                        <th>Client's message</th>
+                        <th>Internal Comment</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,9 +80,12 @@ class ListContactsComponent extends Component {
                             <td>{contact.email}</td>
                             <td>{contact.phonenumber}</td>
                             <td>{contact.msgclient}</td>
+                            <td>{contact.msginternal}</td>
                             <td>
-                                <button className="btn btn-success" onClick={() => this.deleteContact(contact.id)}> Delete</button>
-                                <button className="btn btn-success" onClick={() => this.editContact(contact.id)}> Edit</button>
+                                <button className="btn btn-success" onClick={() => this.editContact(contact.id)}>Edit</button>
+                            </td>
+                            <td>
+                                <button className="btn btn-success" onClick={() => this.deleteContact(contact.id)}>Delete</button>
                             </td>
                         </tr>
                     )}

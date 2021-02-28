@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ContactService from '../services/contactservice'
+import ContactService from '../../services/contactservice'
 
 class AddContactComponent extends Component{
 
@@ -14,6 +14,7 @@ class AddContactComponent extends Component{
             email: '',
             phonenumber: '',
             msgclient: '',
+            msginternal: '',
         }
         this.saveContact = this.saveContact.bind(this);
     }
@@ -28,7 +29,8 @@ class AddContactComponent extends Component{
              postcity: this.state.postcity,
              email: this.state.email,
              phonenumber: this.state.phonenumber,
-             msgclient: this.state.msgclient};
+             msgclient: this.state.msgclient,
+             msginternal: this.state.msginternal};
         ContactService.addContact(contact)
             .then(res => {
                 this.setState({message : 'Contact added successfully.'});
@@ -75,13 +77,18 @@ class AddContactComponent extends Component{
                 </div>
 
                 <div className="form-group">
-                    <label> Phonenumber:</label>
+                    <label>Phonenumber:</label>
                     <input type="text" placeholder="Phonenumber" name="phonenumber" className="form-control" value={this.state.phonenumber} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
-                    <label>Message:</label>
-                    <textarea type="text" placeholder="My Message" name="msgclient" className="form-control" value={this.state.MsgClient} onChange={this.onChange}/>
+                    <label>Client's message</label>
+                    <textarea type="text" placeholder="Clients message" name="msgclient" className="form-control" value={this.state.MsgClient} onChange={this.onChange}/>
+                </div>
+
+                <div className="form-group">
+                    <label>Internal comment:</label>
+                    <textarea type="text" placeholder="Internal comment" name="msginternal" className="form-control" value={this.state.MsgClient} onChange={this.onChange}/>
                 </div>
 
                 <button className="btn btn-success" onClick={this.saveContact}>Save</button>

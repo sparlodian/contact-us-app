@@ -1,5 +1,7 @@
 package contactus.server.model;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.*;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -30,6 +32,9 @@ public class Contact {
     private String msgclient;
     @Column
     private String msginternal;
+    @Column
+    private LocalDateTime timestamp;
+    
 	public int getId() {
 		return id;
 	}
@@ -90,6 +95,10 @@ public class Contact {
 	public void setMsginternal(String msginternal) {
 		this.msginternal = msginternal;
 	}
-    
-	
+	public LocalDateTime getLocaldatetime() {
+		return timestamp;
+	}
+	public void setLocaldatetime(LocalDateTime timestamp) {
+		this.timestamp = timestamp;
+	}
 }

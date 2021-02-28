@@ -9,6 +9,10 @@ import contactus.server.model.Contact;
 import contactus.server.model.ContactDTO;
 
 import javax.transaction.Transactional;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -64,6 +68,9 @@ public class ContactServiceImpl implements ContactService {
 	    newContact.setEmail(contact.getEmail());
 	    newContact.setPhonenumber(contact.getPhonenumber());
 	    newContact.setMsgclient(contact.getMsginternal());
+	    LocalDateTime timestamp = LocalDateTime.now();
+	    System.out.println(timestamp);
+	    newContact.setLocaldatetime(timestamp);
         return contactDAO.save(newContact);
     }
 }

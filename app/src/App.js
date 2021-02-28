@@ -2,20 +2,30 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import './App.css';
-import AppRouter from './services/app-router';
-import AddContactComponent from './components/add-contact';
-import EditContactComponent from './components/edit-contact';
-import ListContactsComponent from './components/list-contacts';
+import AddContactComponent from './components/dashboard/add-contact';
+import EditContactComponent from './components/dashboard/edit-contact';
+import ListContactsComponent from './components/dashboard/list-contacts';
+import Nav from './components/common/nav';
 import React from "react";
 
 function App() {
   return (
     <div className="container">
-      <AppRouter/>
+
+      <Router>
+            <div className="container">
+                <Nav />
+                <Switch>
+                    <Route exact path="/" component={ListContactsComponent} />
+                    <Route path="/contacts" component={ListContactsComponent} />
+                    <Route path="/add-contact" component={AddContactComponent} />
+                    <Route path="/edit-contact" component={EditContactComponent} />
+                </Switch>
+            </div>
+        </Router>
     </div>
   );
 }
